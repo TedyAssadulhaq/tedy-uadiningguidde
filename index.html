@@ -243,55 +243,38 @@
             <h2>Test Your Knowledge</h2>
             <p>Answer these questions to see how much you've learned about business dining etiquette.</p>
             
-            <div class="survey-question">
-                <p><strong>1. When should you place your napkin on your lap?</strong></p>
-                <ul>
-                    <li>Immediately after being seated</li>
-                    <li>After the host does</li>
-                    <li>When the food arrives</li>
-                    <li>After everyone has ordered</li>
-                </ul>
-            </div>
-            
-            <div class="survey-question">
-                <p><strong>2. How do you indicate you're finished with your meal?</strong></p>
-                <ul>
-                    <li>Place your utensils in a V shape on your plate</li>
-                    <li>Place your utensils parallel at the 4 o'clock position</li>
-                    <li>Cross your knife and fork on your plate</li>
-                    <li>Place your napkin on the table</li>
-                </ul>
-            </div>
-            
-            <div class="survey-question">
-                <p><strong>3. Which of these topics is most appropriate for business dining conversation?</strong></p>
-                <ul>
-                    <li>Political views</li>
-                    <li>Recent industry developments</li>
-                    <li>Complaints about your current job</li>
-                    <li>Religious beliefs</li>
-                </ul>
-            </div>
-            
-            <div class="survey-question">
-                <p><strong>4. When is the appropriate time to discuss business during a meal?</strong></p>
-                <ul>
-                    <li>As soon as you sit down</li>
-                    <li>After orders have been placed</li>
-                    <li>During the main course</li>
-                    <li>After the main course, usually during coffee or dessert</li>
-                </ul>
-            </div>
-            
-            <div class="survey-question">
-                <p><strong>5. If you're unsure which utensil to use, what should you do?</strong></p>
-                <ul>
-                    <li>Ask the server for guidance</li>
-                    <li>Watch your host or others at the table and follow their lead</li>
-                    <li>Use whatever feels most comfortable</li>
-                    <li>Eat with your hands to avoid making a mistake</li>
-                </ul>
-            </div>
+             <div class="survey-question">
+        <p><strong>1. When should you place your napkin on your lap?</strong></p>
+        <div class="options">
+            <button onclick="showAnswer(1, 'After the host does')">Immediately after being seated</button>
+            <button onclick="showAnswer(1, '✅ Correct! Follow the host’s lead.')">After the host does</button>
+            <button onclick="showAnswer(1, 'Not quite! It should be done before the food arrives.')">When the food arrives</button>
+            <button onclick="showAnswer(1, 'No, this is too late.')">After everyone has ordered</button>
+        </div>
+        <p id="answer1" class="answer"></p>
+    </div>
+
+    <div class="survey-question">
+        <p><strong>2. How do you indicate you're finished with your meal?</strong></p>
+        <div class="options">
+            <button onclick="showAnswer(2, 'Not correct! This indicates you are still eating.')">Place your utensils in a V shape on your plate</button>
+            <button onclick="showAnswer(2, '✅ Correct! Parallel at 4 o’clock position shows you are finished.')">Place your utensils parallel at the 4 o'clock position</button>
+            <button onclick="showAnswer(2, 'This actually means you are resting, not finished.')">Cross your knife and fork on your plate</button>
+            <button onclick="showAnswer(2, 'Napkin placement is not the correct indicator.')">Place your napkin on the table</button>
+        </div>
+        <p id="answer2" class="answer"></p>
+    </div>
+
+    <div class="survey-question">
+        <p><strong>3. Which of these topics is most appropriate for business dining conversation?</strong></p>
+        <div class="options">
+            <button onclick="showAnswer(3, 'Not the best choice! Avoid controversial topics.')">Political views</button>
+            <button onclick="showAnswer(3, '✅ Correct! Industry developments are safe and professional.')">Recent industry developments</button>
+            <button onclick="showAnswer(3, 'No! Complaining is unprofessional.')">Complaints about your current job</button>
+            <button onclick="showAnswer(3, 'Avoid discussing personal beliefs.')">Religious beliefs</button>
+        </div>
+        <p id="answer3" class="answer"></p>
+    </div>
         </section>
         
         <section class="references">
@@ -308,7 +291,13 @@
     
     <footer>
         <p>&copy; 2025 Business Dining Etiquette Guide | Created for University of Arizona Students</p>
-        <p>This website was created as part of a class project.</p>
+        <p>This website was created as part of SIE 515 Homework 4 Assignment.</p>
     </footer>
+    <script>
+        function showAnswer(questionNumber, text) {
+            document.getElementById('answer' + questionNumber).innerText = text;
+            document.getElementById('answer' + questionNumber).style.display = 'block';
+        }
+    </script>
 </body>
 </html>
